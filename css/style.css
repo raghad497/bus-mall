@@ -1,0 +1,17 @@
+/* Important Note for TA : My JS , css and html work is based on Samer Allaham class repo , I followed all the steps we were told to follow to build this code and repeated the structure of some functions in the class demo . */
+
+
+body{background-image: url("https://wallpapercave.com/wp/wp3157733.jpg");}
+h1 {color:white;font-size: 60px;
+    text-shadow: 2px 2px;
+  }
+#first{padding: 5px;
+    width: 400px;border-radius: 50%;}
+#second{padding: 5px;
+    width: 400px;border-radius: 50%;}
+#third{padding: 5px;
+    width: 400px;border-radius: 50%;height: 400px;}
+
+    /* used w3schools to help with some css commands */
+
+    
