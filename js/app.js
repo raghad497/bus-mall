@@ -11,6 +11,7 @@ let counter=0;
 
 let firstIndex;
 let secondIndex;
+let thirdIndex;
 
 function Items(item,src){
 this.item=item;
@@ -54,8 +55,10 @@ function renderThreeImages(){
     second=getRandomIndex();
     third=getRandomIndex();
 
-    while (firstIndex===secondIndex){
+    while (firstIndex===secondIndex||firstIndex===thirdIndex||secondIndex===thirdIndex){
         firstIndex=getRandomIndex();
+        secondIndex=getRandomIndex();
+        thirdIndex=getRandomIndex();
     }
     firstElement.src=items[firstIndex].source;
     secondElement.src=items[secondIndex].source;
@@ -64,10 +67,84 @@ function renderThreeImages(){
 
 renderThreeImages();
 
-firstElement.addEventListener('click',handleUserClick);
-secondElement.addEventListener('click',handleUserClick);
-thirdElement.addEventListener('click',handleUserClick);
+let ThreeImagesDiv=document.getElementById('ThreeImages-div');
 
 function handleUserClick(event){
     counter++;
 }
+
+
+
+    const data = {
+      labels: namesArr,
+      datasets: [{
+        label: 'Votes',
+        data: votesArr,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 205, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(201, 203, 207, 0.2)'
+        ],
+        borderColor: [
+          'rgb(255, 99, 132)',
+          'rgb(255, 159, 64)',
+          'rgb(255, 205, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(54, 162, 235)',
+          'rgb(153, 102, 255)',
+          'rgb(201, 203, 207)'
+        ],
+        borderWidth: 1
+      },
+      {
+        label: 'Shown',
+        data: shownArr,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 205, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(201, 203, 207, 0.2)'
+        ],
+        borderColor: [
+          'rgb(255, 99, 132)',
+          'rgb(255, 159, 64)',
+          'rgb(255, 205, 86)',
+          'rgb(75, 192, 192)',
+          'rgb(54, 162, 235)',
+          'rgb(153, 102, 255)',
+          'rgb(201, 203, 207)'
+        ],
+        borderWidth: 1
+      }
+    
+    ]
+    };
+  
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      },
+    };
+  
+  
+    var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  
+  }
+  
+   
